@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-12-17T16:03:23.728461" rpa="false" schemaversion="5">
+<suite id="s1" name="Delete Serverest" source="C:\Users\octav\OneDrive\Documentos\Projetos\QA\test-api-robot\src\requests\delete_serverest.robot">
+<test id="s1-t1" name="Deletando um usuário criado no Server Rest" line="9">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-12-17T16:03:23.842161" level="TRACE">Arguments: [ alias='server_rest' | url='https://serverest.dev' ]</msg>
+<msg time="2024-12-17T16:03:23.842161" level="INFO">Creating Session using : alias=server_rest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-12-17T16:03:23.842161" level="DEBUG">Creating session: server_rest</msg>
+<msg time="2024-12-17T16:03:23.842161" level="TRACE">Return: &lt;requests.sessions.Session object at 0x000002622E0FA990&gt;</msg>
+<arg>alias=server_rest</arg>
+<arg>url=https://serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-12-17T16:03:23.842161" elapsed="0.000000"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2024-12-17T16:03:23.842161" level="TRACE">Arguments: [ url='/usuarios/Ro8wwPSMYB1HWBOW' | alias='server_rest' | expected_status='200' ]</msg>
+<msg time="2024-12-17T16:03:23.842161" level="DEBUG">Starting new HTTPS connection (1): serverest.dev:443</msg>
+<msg time="2024-12-17T16:03:24.231354" level="DEBUG">https://serverest.dev:443 "DELETE /usuarios/Ro8wwPSMYB1HWBOW HTTP/1.1" 200 51</msg>
+<msg time="2024-12-17T16:03:24.231354" level="INFO">DELETE Request : url=https://serverest.dev/usuarios/Ro8wwPSMYB1HWBOW 
+ path_url=/usuarios/Ro8wwPSMYB1HWBOW 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-12-17T16:03:24.231354" level="INFO">DELETE Response : url=https://serverest.dev/usuarios/Ro8wwPSMYB1HWBOW 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'a34d2184b6851481e8b7e5e777055fae;o=1', 'Date': 'Tue, 17 Dec 2024 19:03:17 GMT', 'Server': 'Google Frontend', 'Content-Length': '51'} 
+ body={
+    "message": "Registro excluído com sucesso"
+} 
+ </msg>
+<msg time="2024-12-17T16:03:24.231354" level="INFO">C:\Python311\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-12-17T16:03:24.231354" level="TRACE">Return: &lt;Response [200]&gt;</msg>
+<msg time="2024-12-17T16:03:24.231354" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>url=/usuarios/Ro8wwPSMYB1HWBOW</arg>
+<arg>alias=server_rest</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-12-17T16:03:23.842161" elapsed="0.389193"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<msg time="2024-12-17T16:03:24.238423" level="TRACE">Arguments: [ '{\n    "message": "Registro excluído com sucesso"\n}' ]</msg>
+<msg time="2024-12-17T16:03:24.239863" level="TRACE">Return: None</msg>
+<arg>${RESPONSE.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-12-17T16:03:24.231354" elapsed="0.008509"/>
+</kw>
+<status status="PASS" start="2024-12-17T16:03:23.842161" elapsed="0.398718"/>
+</test>
+<status status="PASS" start="2024-12-17T16:03:23.731041" elapsed="0.513381"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Delete Serverest">Delete Serverest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
